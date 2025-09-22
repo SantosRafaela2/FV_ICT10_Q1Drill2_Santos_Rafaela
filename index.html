@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Showcase: My Basic Info</title>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #90b0c5;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 25px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 6px;
+    }
+    button {
+      background: #4a90e2;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #357abd;
+    }
+    .output-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #f1f1f1;
+      border-left: 4px solid #888;
+      text-align: left;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>String Showcase: My Basic Info</h1>
+    <br>
+    <label>Name:</label>
+    <br>
+    <input type="text" id="name" placeholder="What's your name?">
+    <br>
+    <label>Age:</label>
+    <br>
+    <input type="number" id="age" placeholder="How old are you?">
+    <br>
+    <label>School:</label>
+    <br>
+    <input type="text" id="school" placeholder="What's your school?">
+    <br><br>
+    <button type="submit" py-click="generate_message">Generate Message</button>
+
+    <pre id="message" class="output-box"></pre>
+  </div>
+
+
+  <py-config
+    [[fetch]]
+    files = "main.py"
+> </py-config>
+  
+
+  <script type="py">
+    import main
+  </script>
+</body>
+</html>
